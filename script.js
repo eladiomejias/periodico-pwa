@@ -2,6 +2,8 @@ document.getElementById("toolbar_logo").onclick = function () {
     location.reload(true);
 };
 
+console.log(process.env);
+
 // To install axios run "npm i axios"
 const options = {
     token: "EE841127754C687C9C41AD7BCB468D69",
