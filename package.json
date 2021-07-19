@@ -1,0 +1,22 @@
+{
+  "name": "periodico-pwa",
+  "version": "1.0.0",
+  "description": "- PWA Application based on Headline News App.\r - Aplicación Progresiva basa en la aplicacion Headline.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eladiomejias/periodico-pwa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eladiomejias/periodico-pwa/issues"
+  },
+  "homepage": "https://github.com/eladiomejias/periodico-pwa#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
+}

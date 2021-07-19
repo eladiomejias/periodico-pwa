@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 document.getElementById("toolbar_logo").onclick = function () {
     location.reload(true);
 };
