@@ -2,7 +2,7 @@ document.getElementById("toolbar_logo").onclick = function () {
     location.reload(true);
 };
 
-// To install axios run "npm i axios"
+// to install axios run "npm i axios" or put it on script
 const options = {
     token: process.env.TOKEN,
     url: "https://www.marca.com",
