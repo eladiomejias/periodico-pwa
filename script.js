@@ -321,54 +321,47 @@ function requestArticles(source) {
  
     const country = window.localStorage.getItem('country').toUpperCase();
     const countryLow = window.localStorage.getItem('country').toLowerCase();
+
     console.log(countryLow);
     console.log(typeof(countryLow));
+
     const request1 = new XMLHttpRequest();
     const request2 = new XMLHttpRequest();
-    //const request3 = new XMLHttpRequest();
 
-    //request1.responseType = request2.responseType = request3.responseType = "json";
-
-    //request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&country=ES&language=es", true);
-    //request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&country=" + country +"&domain=" + source, true);
-    request1.open("GET", "https://api.currentsapi.services/v1/latest-news?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&domain=" + source, true);
-    //request2.open("GET", "https://api.currentsapi.services/v1/latest-news?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&language=" + countryLow +"&domain=" + source, true);
-    //request3.open("GET", "https://newsapi.org/v1/articles?source=" + source + "&sortBy=top&apiKey=e86b1265afc449e1aa6d2e2e676ebc39", true);
+    request1.open("GET", "https://api.currentsapi.services/v1/latest-news?apiKey=" + process.env.API_KEY + "&domain=" + source, true);
 
     // filtering by code
     if(countryLow == "es" && source != "sports-int" && source != "marca" && source != "mundo-deportivo" && source != "latest-news" && source != "xataka"){
-        request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&country=" + country +"&domain=" + source, true);   
+        request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=" + process.env.API_KEY + "&country=" + country +"&domain=" + source, true);   
     }else if(countryLow == "us" && source == "sports-int"){
-        request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&category=sports&domain_not=tmz.com,stltoday.com", true)
+        request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=" + process.env.API_KEY + "&category=sports&domain_not=tmz.com,stltoday.com", true)
     }else if(countryLow == "es" && source == "sports-int"){
-        request1.open("GET", "    https://api.currentsapi.services/v1/search?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&country=es&category=sports&domain_not=levante-emv.com,juventudrebelde.cu", true);
+        request1.open("GET", "    https://api.currentsapi.services/v1/search?apiKey=" + process.env.API_KEY + "&country=es&category=sports&domain_not=levante-emv.com,juventudrebelde.cu", true);
     }else if(countryLow == "ve" && source == "la-patilla"){
         console.log("VE!");
-        request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&country=ve&domain=lapatilla.com", true);
+        request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=" + process.env.API_KEY + "&country=ve&domain=lapatilla.com", true);
     }else if(countryLow == "ve" && source == "latest-news"){
-        request1.open("GET", "https://api.currentsapi.services/v1/latest-news?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&country=ve&language=es", true);
+        request1.open("GET", "https://api.currentsapi.services/v1/latest-news?apiKey=" + process.env.API_KEY + "&country=ve&language=es", true);
     }else if(countryLow == "es" && source == "latest-news"){
-        request1.open("GET", "https://api.currentsapi.services/v1/latest-news?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&country=es&language=es", true);
+        request1.open("GET", "https://api.currentsapi.services/v1/latest-news?apiKey=" + process.env.API_KEY + "&country=es&language=es", true);
     }else if(countryLow == "es" && source == "marca"){
         //console.log("Mundo Deportivo");
         getMarca();
     }else if(countryLow == "ve" && source == "notitarde"){
-        request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&country=ve&domain=notitarde.com", true);
+        request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=" + process.env.API_KEY + "&country=ve&domain=notitarde.com", true);
     }else if(countryLow == "ve" && source == "noticia-al-dia"){
-        request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&country=ve&domain=noticialdia.com", true);
+        request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=" + process.env.API_KEY + "&country=ve&domain=noticialdia.com", true);
     }else if(countryLow == "es" && source == "xataka"){
-        request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&language=es&country=es&category=technology,mobile,gadgets,science,programming,entertainment,game&start_date=" + yesterdayDate, true);
+        request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=" + process.env.API_KEY + "&language=es&country=es&category=technology,mobile,gadgets,science,programming,entertainment,game&start_date=" + yesterdayDate, true);
     }else if(countryLow == "es" && source == "latest-news"){
-        request1.open("GET", "https://api.currentsapi.services/v1/latest-news?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&country=es&language=es", true);
+        request1.open("GET", "https://api.currentsapi.services/v1/latest-news?apiKey=" + process.env.API_KEY + "&country=es&language=es", true);
     }else if(countryLow == "us" && source =="the-guardian-sports"){
-        request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&domain=theguardian.com&category=sports", true);
+        request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=" + process.env.API_KEY + "&domain=theguardian.com&category=sports", true);
     }else{
         console.log("OTHER!");
-        request1.open("GET", "https://api.currentsapi.services/v1/latest-news?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&domain=" + source, true);
-        //request1.open("GET", "https://api.currentsapi.services/v1/search?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&domain=" + source + "&start_date=" + yesterdayDate, true);
+        request1.open("GET", "https://api.currentsapi.services/v1/latest-news?apiKey=" + process.env.API_KEY + "&domain=" + source, true);
     }
 
-    //https://api.currentsapi.services/v1/search?apiKey=dZF37Y3U8FX459mGdCDgS5HN8YJbCHpMFluSxfTvzKYTZ80-&language=es&country=es&category=technology,mobile,gadgets,science,programming,entertainment,game&start_date=2021-04-02
 
     request1.onload = function () {
         latest = (request1.status === 200) ? JSON.parse(request1.response).news : true;
