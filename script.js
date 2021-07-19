@@ -2,25 +2,20 @@ document.getElementById("toolbar_logo").onclick = function () {
     location.reload(true);
 };
 
-console.log(process.env.MY_KEY);
-
 // To install axios run "npm i axios"
 const options = {
-    token: "EE841127754C687C9C41AD7BCB468D69",
+    token: process.env.TOKEN,
     url: "https://www.marca.com",
 };
 
 const options2 = {
-    token: "EE841127754C687C9C41AD7BCB468D69",
+    token: process.env.TOKEN,
     url: "https://www.mundodeportivo.com"
 }
 
 // basic yesterDay date
 var todayDate = new Date().toLocaleDateString('en-CA');
 var yesterdayDate = new Date(new Date().setDate(new Date().getDate()-1)).toLocaleDateString('en-CA');
-//var today = new Date();
-//var yesterday = (today.setDate(today.getDate() - 1));
-//var yesterdayDate = yesterday.toLocaleDateString('en-CA');
 
 const sources = {
     us: {
