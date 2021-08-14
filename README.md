@@ -26,8 +26,8 @@ Es una aplicación progresiva (PWA) que permite leer y obtener información de l
 - activar el directorio con un *servidor HTTP*, con node o una extensión como *Web Server for Chrome*.
 - ir al *localhost*.
 
-### Directorios
+### Nota
 
-- el-periodico/: Desarrollo ultimo para produccion
-- prod/: Demo base y desarrollo principal
+- Esta aplicación contiene Tokens para recibir información de la API de Currents, ingresar tu API Token en el sector mencionado.
+
 
