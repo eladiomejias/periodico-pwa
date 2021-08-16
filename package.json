@@ -18,5 +18,8 @@
   "homepage": "https://github.com/eladiomejias/periodico-pwa#readme",
   "dependencies": {
     "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3"
   }
 }
