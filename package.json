@@ -20,6 +20,8 @@
     "dotenv": "^10.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
     "babel-plugin-transform-inline-environment-variables": "^0.4.3"
   }
 }
