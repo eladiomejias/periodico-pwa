@@ -2,6 +2,7 @@
 - PWA Application based on Headline News App.
 - Aplicación Progresiva basa en la aplicacion Headline.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/49d662af-b88f-4a2a-a261-0bab51a5ef82/deploy-status)](https://app.netlify.com/sites/periodico/deploys)
 
 ## Qué es El Periódico?
 Es una aplicación progresiva (PWA) que permite leer y obtener información de las noticias de último momento de los proovedores más comunes y famosos usando la API de Currents. 
@@ -25,8 +26,8 @@ Es una aplicación progresiva (PWA) que permite leer y obtener información de l
 - activar el directorio con un *servidor HTTP*, con node o una extensión como *Web Server for Chrome*.
 - ir al *localhost*.
 
-### Directorios
+### Nota
 
-- el-periodico/: Desarrollo ultimo para produccion
-- prod/: Demo base y desarrollo principal
+- Esta aplicación contiene Tokens para recibir información de la API de Currents, ingresar tu API Token en el sector mencionado.
+
 
